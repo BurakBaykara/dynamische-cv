@@ -1,0 +1,34 @@
+body{
+    overflow-y:hidden;
+    overflow-x: hidden;
+    background-color:pink;
+}
+
+#foto{
+    width:105%;
+    height:105%;
+    position:relative;
+    top:-432px;
+    left:-7px;
+    opacity:0.5;
+}
+
+#background{
+    background-color: black;
+    width:500px;
+    height:500px;
+   
+}
+
+a{
+    position: relative;
+    left:1450px;
+    z-index:1;
+}
+
+form{
+    text-align: center;
+    position: relative;
+    top:50px;
+    z-index: 1;
+}
