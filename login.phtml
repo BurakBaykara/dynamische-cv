@@ -26,7 +26,7 @@ if( isset($_POST['submit'])){
     $gebruikersnaamdb = $database_gegevens['Gebruikersnaam'];
     $Wachtwoorddb = $database_gegevens['Wachtwoord'];
 
-    // als de gebruikersnaam/wachtwoord niet gelijk is aan de gebruikersnaam/wachtwoord in de database gebeurt het volgende.
+    // als de gebruikersnaam/wachtwoord gelijk is aan de gebruikersnaam/wachtwoord in de database gebeurt het volgende.
     if($gebruikersnaam==$gebruikersnaamdb && $wachtwoord==$Wachtwoorddb){
         header('Location: home.phtml');
     }
