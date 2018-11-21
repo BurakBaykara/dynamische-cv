@@ -1,0 +1,397 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot');
+	src:url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.contact{
+    position:fixed;
+    left:0px;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#pic{
+    position:fixed;
+    top:0;
+    left:-8px;
+    width:102%;
+    opacity:0.3;
+}
+
+#opleiding{
+    font-family: montserrat;
+    font-size: 15px;
+    position:fixed;
+    left:536px;
+    top:106px;
+    z-index:1;
+    transition-duration: 1s;
+}
+
+#opleiding:hover{
+    font-size: 17px;
+}
+
+
+#student{
+    font-family: montserrat;
+    font-size: 15px;
+    position:fixed;
+    left:12px;
+    top:106px;
+    z-index:1;
+    transition-duration: 1s;
+}
+
+#student:hover{
+    font-size: 17px;
+}
+
+#werkervaring{
+    font-family: montserrat;
+    font-size: 15px;
+    position:fixed;
+    left:1111px;
+    top:106px;
+    z-index:1;
+    transition-duration:1s;
+}
+
+#werkervaring:hover{
+    font-size:17px;
+}
+
+#vaardigheden{
+    font-family: montserrat;
+    font-size: 15px;
+    position:fixed;
+    left:12px;
+    top:407px;
+    z-index:1;
+    transition-duration: 1s;
+}
+
+#vaardigheden:hover{
+    font-size:17px;
+}
+
+#taal{
+    font-family: montserrat;
+    font-size: 15px;
+    position:fixed;
+    left:536px;
+    top:407px;
+    z-index:1;
+    transition-duration:1s;
+}
+
+#taal:hover{
+    font-size: 17px;
+}
+
+#hobby{
+    font-family: montserrat;
+    font-size:15px;
+    position:fixed;
+    left:1111px;
+    top:407px;
+    z-index:1;
+    transition-duration:1s;
+}
+
+#hobby:hover{
+    font-size:17px;
+    
+}
+
+h3{
+    text-decoration: underline;
+}
+
+
+#button{
+    color:black;
+    text-decoration: none;
+}
+.login{
+	background: #823aa0;
+	color: black;
+	height: 70px;
+	min-width: 260px;
+	line-height: 24px;
+	font-size: 16px;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+    position:relative;
+    left:1235px;
+    z-index:1;
+}
+
+.login:activate{
+	background: #9053a9;
+	top: 2px;
+}
+
+.login:before {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	line-height: 2.5;
+	font-size: 180%;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.login:active:before {
+	color: #703b87;
+}
+
+.login:hover span {
+	-webkit-transform: translateY(300%);
+	-moz-transform: translateY(300%);
+	-ms-transform: translateY(300%);
+	transform: translateY(300%);
+}
+
+.login:before {
+	left: 0;
+	top: -100%;
+}
+
+.login:hover:before {
+	top: 0;
+}
+
+.login {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	top:-21px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.login:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.login:before,
+.icon-cart:after{
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+    
+.login span {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.3s;
+	-webkit-backface-visibility: hidden;
+	-moz-transition: all 0.3s;
+	-moz-backface-visibility: hidden;
+	transition: all 0.3s;
+	backface-visibility: hidden;
+}
+
+#button1{
+    position:absolute;
+    top:125px;
+    left:203px;
+    z-index:2;
+    
+}
+
+#button2{
+    position:absolute;
+    top:125px;
+    left:653px;
+    z-index:2;
+}
+
+#button3{
+    position:absolute;
+    top:125px;
+    left:1253px;
+    z-index:2;
+}
+
+#button4{
+    position:absolute; 
+    top:428px;
+    left:181px;
+    z-index:2;
+}
+
+#button5{
+    position:absolute;
+    top:428px;
+    left:605px;
+    z-index:2;
+}
+
+#button6{
+    position:absolute;
+    top:428px;
+    left:1205px;
+    z-index:2;
+}
+
+#logout{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid black;
+  padding: 10px 15px;
+  color: black;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 15px;
+  transition-duration: 0.25s;
+  text-align:center;
+  text-decoration:none;
+  position:relative;
+  left:1367px;
+  top:-37px;
+  z-index:1;
+  font-family: inherit;
+
+}
+
+#logout:hover {
+  background-color: grey;
+  color:white;
+}
+
+#nav-list{
+    background-color:black;
+    width:104%;
+    height:57px;
+    position:relative;
+    top:-83px;
+    left:-8px;
+    z-index:-5;
+}
+
+#welcome{
+    color:white;
+    position:relative;
+    top:6;
+}
+
+body{
+    font-family: montserrat;
+}
+
+#welcome{
+    font-size: 12px
+}
+
+.icon-cart:before {
+	content: "\e007";
+}
+
+
+.dropbtn {
+    font-family: inherit;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    color: black;
+}
+
+.dropdown {
+    font-family: inherit;
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+    left: 514px;
+    top:-20px;
+    z-index: 5;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-family: inherit;
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: inherit;
+}
+
+.dropdown-content a:hover {
+    background-color: transparent;
+    
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    
+}
+
+.dropdown:hover .dropbtn {
+    background-color: grey;
+    
+}
+
+#contact{
+    position:relative;
+    top:-17px;
+    left:-294px;
+    z-index: 2;
+    background-color: transparent;
+    border:0;
+    font-family: inherit;
+    font-size: 15px;
+    transition-duration: 0.50s;
+    
+}
+
+#contact:hover{
+    font-size:20px;
+}

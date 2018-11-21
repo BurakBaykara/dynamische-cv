@@ -1,0 +1,121 @@
+<?php 
+	//Sessie starten om knoppen te laten zien als je bent ingelogd
+	session_start();
+	
+	//connectie met databaes
+	include('database_connectie.php');
+	
+	//Alles selecteren uit database
+	$sql = "SELECT * FROM Student WHERE Studentennummer";
+	$statement = $db_conn->query($sql);
+	$row = $statement->fetch();	
+	
+	$sql1 = "SELECT * FROM Opleiding WHERE Studentennummer";
+	$statement1 = $db_conn->query($sql1);
+	$row1 = $statement1->fetch();
+	
+	$sql2 = "SELECT * FROM Werkervaring WHERE Studentennummer";
+	$statement2 = $db_conn->query($sql2);
+	$row2 = $statement2->fetch();
+	
+	$sql3 = "SELECT * FROM vaardigheden WHERE Studentennummer";
+	$statement3 = $db_conn->query($sql3);
+	$row3 = $statement3->fetch();
+	
+	$sql4 = "SELECT * FROM Taal WHERE Studentennummer";
+	$statement4 = $db_conn->query($sql4);
+	$row4 = $statement4->fetch();
+	
+	$sql5 = "SELECT * FROM Hobby WHERE Studentennummer";
+	$statement5 = $db_conn->query($sql5);
+	$row5 = $statement5->fetch();
+	
+	//knoppen laten zien als er is ingelogd.
+	if (isset($_SESSION['gebruikersnaam'])){
+		echo "<a href=update/student.php id=button1> Update </a>";
+		echo "<a href=update/opleiding.php id=button2> Update</a>";
+		echo "<a href=update/werkervaring.php id=button3> Update</a>";
+		echo "<a href=update/vaardigheden.php id=button4> Update</a>";
+		echo "<a href=update/taal.php id=button5> Update</a>";
+		echo "<a href=update/hobby.php id=button6> Update</a>";
+		echo "<p id=welcome>Welcome " . $_SESSION['gebruikersnaam'] . "</p><br>";
+		echo "<a href=logout.php id=logout>Sign out</a>";
+	}
+	else{
+		echo "<a href=loginen.phtml><button class=login icon-cart><span>Sign in</span></button></a>";
+		echo "<a href=../contact.html><button id=contact>contact</button></a>";
+		echo "<div class=dropdown><button class=dropbtn>Language</button><div class=dropdown-content><a href=../home.phtml>NL</a></div></div> ";
+	}
+	
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styleen.css">
+	<title>Home</title>
+</head>
+<body>
+
+  
+	<div id="student">
+		<table>
+			<tr>
+				<h3>Student infomation:</h3>
+				<p> Name-surname <?php echo $row["Voornaam"] . " " . $row["Achternaam"];?></p>
+				<p>StudentID <?php echo $row["Studentennummer"];?></p>
+				<p>City <?php echo $row["Woonplaats"];?></p>
+				<p>Date of birth <?php echo $row['Geboortedatum'];?></p>
+			</tr>
+		</table>
+	</div>		
+	<div id="opleiding">
+		<table>
+			<tr>
+				<h3>Education:</h3>
+				<p>School: <?php echo $row1["Soort"]; ?></p>
+				<p>Niveau: <?php echo $row1["niveau"]; ?></p>
+				<p>Startdate and enddate: <?php echo $row1["Startdatum"] . " - " . $row1["Einddatum"]; ?></p>
+				<p>Location: <?php echo $row1["locatie"]; ?></p>
+			</tr>
+		</table>
+	</div>
+	<div id="werkervaring">
+		<table>
+			<tr>
+				<h3>Work experience:</h3>
+				<p>WorkID: <?php echo $row2["Werkcode"]; ?></p>
+				<p>Startdate and enddate: <?php echo $row2["Startdatum"] . " - " . $row2["Einddatum"];?></p>
+				<p>Type work: <?php echo $row2["Type"]; ?></p>
+			</tr>
+		</table>
+	</div>
+	<div id="vaardigheden">
+		<table>
+			<tr>
+				<h3>Skills</h3>
+				<p>Skills: <?php echo $row3["Type"];?></p>
+				<p>Skill level: <?php echo $row3["Niveau"];?></p>
+			</tr>
+		</table>
+	</div>
+	<div id="taal">
+		<table>
+			<tr>
+				<h3>Languages</h3>
+				<p>Languages: <?php echo $row4["Taal"]; ?></p>
+				<p>Language level:</p>: <?php echo $row4["Niveau"]; ?></p>
+			</tr>
+		</table>
+	</div>
+	<div id="hobby">
+		<table>
+			<tr>
+				<h3>Hobby</h3>
+				<p>Hobby: <?php echo $row5["Hobby"]; ?></p>
+			</tr>
+		</table>
+	</div>
+	<img src="pc.jpg" id="pic"></img>
+</body>
+</html>

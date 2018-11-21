@@ -1,0 +1,69 @@
+<?php
+
+if( isset($_POST['submit'])){
+    session_start();
+    $gebruikersnaam = $_POST['gebruikersnaam'];
+    $wachtwoord = $_POST['wachtwoord'];
+    
+
+    include('database_connectie.php');
+    
+    $sql = "SELECT * FROM admin WHERE Gebruikersnaam = :gebruikersnaam"; 
+    $statement = $db_conn->prepare($sql); 
+    $statement->bindParam(":gebruikersnaam", $gebruikersnaam); 
+    $statement->execute(); $database_gegevens = $statement->fetch(PDO::FETCH_ASSOC);
+    
+    $sql = "SELECT * FROM admin WHERE Wachtwoord = :wachtwoord"; 
+    $statement = $db_conn->prepare($sql); 
+    $statement->bindParam(":wachtwoord", $wachtwoord); 
+    $statement->execute(); $database_gegevens = $statement->fetch(PDO::FETCH_ASSOC);
+    
+    $gebruikersnaamdb = $database_gegevens['Gebruikersnaam'];
+    $Wachtwoorddb = $database_gegevens['Wachtwoord'];
+    
+    if($gebruikersnaam==$gebruikersnaamdb && $wachtwoord==$Wachtwoorddb){
+        header('Location: enhome.phtml');
+    }
+    elseif($gebruikersnaamdb!=$gebruikersnaam || $Wachtwoorddb!=$wachtwoord){
+        echo '<p style=text-align:center;>'."Oops! Looks like your username and password don't match ):".'</p>';
+    
+    }
+        $_SESSION['gebruikersnaam'] = $gebruikersnaam;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/styleslogin.css">
+    <title>Admin inloggen</title>
+</head>
+<body>
+    <div class="wrapper">
+	<div class="container">
+		<h1>Welcome</h1>
+    <form method="post">
+        <p>Username</p>
+        <input type="text" name="gebruikersnaam" placeholder="Username" required/>
+        <p>Password</p>
+        <input type="password" name="wachtwoord" required/><br><br>
+        <input class="login" type="submit" name="submit" value="Login">
+    </form>
+    </div>
+
+    
+    <ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	</div>
+
+</body>
+</html>
